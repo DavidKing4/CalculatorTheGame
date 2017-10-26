@@ -99,7 +99,7 @@ public class CalculatorTheGame{
 			if(n >= 0){
 				StringBuilder sb = new StringBuilder(Integer.toString((int)n));
 				return(Integer.parseInt((sb.reverse()).toString()));
-			}else if(n < 0){
+			}else if(n < 0){	
 				StringBuilder sb = new StringBuilder(Integer.toString((int)n).substring(1, Integer.toString((int)n).length()));
 				return(Integer.parseInt("-" + (sb.reverse()).toString()));
 			}
@@ -115,7 +115,10 @@ public class CalculatorTheGame{
 					i = i + tops1.length() - 1;	
 				}
 			}
-			return(Integer.parseInt(sb.toString()));
+			if(sb.toString().length() < 10){
+				return(Integer.parseInt(sb.toString()));
+			}
+			return(n);
 		}
 		return 0;
 	}
